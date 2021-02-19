@@ -312,93 +312,145 @@ export interface VerifyRefundTxSignatureResponse {
   valid: boolean;
 }
 
+async function handleCall<T1, T2>(
+  func: (arg: string) => Promise<string>,
+  request: T1
+): Promise<T2> {
+  return JSON.parse(await func(JSON.stringify(request)));
+}
+
 function CreateFundTransaction(
-  jsonObject: CreateFundTransactionRequest
-): CreateFundTransactionResponse {
-  return Cfddlc.CreateFundTransaction(JSON.stringify(jsonObject));
+  request: CreateFundTransactionRequest
+): Promise<CreateFundTransactionResponse> {
+  return handleCall<
+    CreateFundTransactionRequest,
+    CreateFundTransactionResponse
+  >(Cfddlc.CreateFundTransaction, request);
 }
 
 function SignFundTransaction(
-  jsonObject: SignFundTransactionRequest
-): SignFundTransactionResponse {
-  return Cfddlc.SignFundTransaction(JSON.stringify(jsonObject));
+  request: SignFundTransactionRequest
+): Promise<SignFundTransactionResponse> {
+  return handleCall<SignFundTransactionRequest, SignFundTransactionResponse>(
+    Cfddlc.SignFundTransaction,
+    request
+  );
 }
 
 function GetRawFundTxSignature(
-  jsonObject: GetRawFundTxSignatureRequest
-): GetRawFundTxSignatureResponse {
-  return Cfddlc.GetRawFundTxSignature(JSON.stringify(jsonObject));
+  request: GetRawFundTxSignatureRequest
+): Promise<GetRawFundTxSignatureResponse> {
+  return handleCall<
+    GetRawFundTxSignatureRequest,
+    GetRawFundTxSignatureResponse
+  >(Cfddlc.GetRawFundTxSignature, request);
 }
 
 function AddSignatureToFundTransaction(
-  jsonObject: AddSignatureToFundTransactionRequest
-): AddSignatureToFundTransactionResponse {
-  return Cfddlc.AddSignatureToFundTransaction(JSON.stringify(jsonObject));
+  request: AddSignatureToFundTransactionRequest
+): Promise<AddSignatureToFundTransactionResponse> {
+  return handleCall<
+    AddSignatureToFundTransactionRequest,
+    AddSignatureToFundTransactionResponse
+  >(Cfddlc.AddSignatureToFundTransaction, request);
 }
 
 function VerifyFundTxSignature(
-  jsonObject: VerifyFundTxSignatureRequest
-): VerifyFundTxSignatureResponse {
-  return Cfddlc.VerifyFundTxSignature(JSON.stringify(jsonObject));
+  request: VerifyFundTxSignatureRequest
+): Promise<VerifyFundTxSignatureResponse> {
+  return handleCall<
+    VerifyFundTxSignatureRequest,
+    VerifyFundTxSignatureResponse
+  >(Cfddlc.VerifyFundTxSignature, request);
 }
 
-function CreateCet(jsonObject: CreateCetRequest): CreateCetResponse {
-  return Cfddlc.CreateCet(JSON.stringify(jsonObject));
+function CreateCet(request: CreateCetRequest): Promise<CreateCetResponse> {
+  return handleCall<CreateCetRequest, CreateCetResponse>(
+    Cfddlc.CreateCet,
+    request
+  );
 }
 
 function CreateRefundTransaction(
-  jsonObject: CreateRefundTransactionRequest
-): CreateRefundTransactionResponse {
-  return Cfddlc.CreateRefundTransaction(JSON.stringify(jsonObject));
+  request: CreateRefundTransactionRequest
+): Promise<CreateRefundTransactionResponse> {
+  return handleCall<
+    CreateRefundTransactionRequest,
+    CreateRefundTransactionResponse
+  >(Cfddlc.CreateRefundTransaction, request);
 }
 
 function CreateDlcTransactions(
-  jsonObject: CreateDlcTransactionsRequest
-): CreateDlcTransactionsResponse {
-  return Cfddlc.CreateDlcTransactions(JSON.stringify(jsonObject));
+  request: CreateDlcTransactionsRequest
+): Promise<CreateDlcTransactionsResponse> {
+  return handleCall<
+    CreateDlcTransactionsRequest,
+    CreateDlcTransactionsResponse
+  >(Cfddlc.CreateDlcTransactions, request);
 }
 
 function CreateCetAdaptorSignature(
-  jsonObject: CreateCetAdaptorSignatureRequest
-): CreateCetAdaptorSignatureResponse {
-  return Cfddlc.CreateCetAdaptorSignature(JSON.stringify(jsonObject));
+  request: CreateCetAdaptorSignatureRequest
+): Promise<CreateCetAdaptorSignatureResponse> {
+  return handleCall<
+    CreateCetAdaptorSignatureRequest,
+    CreateCetAdaptorSignatureResponse
+  >(Cfddlc.CreateCetAdaptorSignature, request);
 }
 
 function CreateCetAdaptorSignatures(
-  jsonObject: CreateCetAdaptorSignaturesRequest
-) {
-  return Cfddlc.CreateCetAdaptorSignatures(JSON.stringify(jsonObject));
+  request: CreateCetAdaptorSignaturesRequest
+): Promise<CreateCetAdaptorSignaturesResponse> {
+  return handleCall<
+    CreateCetAdaptorSignaturesRequest,
+    CreateCetAdaptorSignaturesResponse
+  >(Cfddlc.CreateCetAdaptorSignatures, request);
 }
 
-function SignCet(jsonObject: SignCetRequest): SignCetResponse {
-  return Cfddlc.SignCet(JSON.stringify(jsonObject));
+function SignCet(request: SignCetRequest): Promise<SignCetResponse> {
+  return handleCall<SignCetRequest, SignCetResponse>(Cfddlc.SignCet, request);
 }
 
 function VerifyCetAdaptorSignature(
-  jsonObject: VerifyCetAdaptorSignatureRequest
-): VerifyCetAdaptorSignatureResponse {
-  return Cfddlc.VerifyCetAdaptorSignature(JSON.stringify(jsonObject));
+  request: VerifyCetAdaptorSignatureRequest
+): Promise<VerifyCetAdaptorSignatureResponse> {
+  return handleCall<
+    VerifyCetAdaptorSignatureRequest,
+    VerifyCetAdaptorSignatureResponse
+  >(Cfddlc.VerifyCetAdaptorSignature, request);
 }
 
 function VerifyCetAdaptorSignatures(
-  jsonObject: VerifyCetAdaptorSignaturesRequest
-): VerifyCetAdaptorSignaturesResponse {
-  return Cfddlc.VerifyCetAdaptorSignatures(JSON.stringify(jsonObject));
+  request: VerifyCetAdaptorSignaturesRequest
+): Promise<VerifyCetAdaptorSignaturesResponse> {
+  return handleCall<
+    VerifyCetAdaptorSignaturesRequest,
+    VerifyCetAdaptorSignaturesResponse
+  >(Cfddlc.VerifyCetAdaptorSignatures, request);
 }
-function GetRawRefundTxSignature(
-  jsonObject: GetRawRefundTxSignatureRequest
-): GetRawRefundTxSignatureResponse {
-  return Cfddlc.GetRawRefundTxSignature(JSON.stringify(jsonObject));
+async function GetRawRefundTxSignature(
+  request: GetRawRefundTxSignatureRequest
+): Promise<GetRawRefundTxSignatureResponse> {
+  return handleCall<
+    GetRawRefundTxSignatureRequest,
+    GetRawRefundTxSignatureResponse
+  >(Cfddlc.GetRawRefundTxSignature, request);
 }
-function AddSignaturesToRefundTx(
-  jsonObject: AddSignaturesToRefundTxRequest
-): AddSignaturesToRefundTxResponse {
-  return Cfddlc.AddSignaturesToRefundTx(JSON.stringify(jsonObject));
+async function AddSignaturesToRefundTx(
+  request: AddSignaturesToRefundTxRequest
+): Promise<AddSignaturesToRefundTxResponse> {
+  return handleCall<
+    AddSignaturesToRefundTxRequest,
+    AddSignaturesToRefundTxResponse
+  >(Cfddlc.AddSignaturesToRefundTx, request);
 }
-function VerifyRefundTxSignature(
-  jsonObject: VerifyRefundTxSignatureRequest
-): VerifyRefundTxSignatureResponse {
-  return Cfddlc.VerifyRefundTxSignature(JSON.stringify(jsonObject));
+async function VerifyRefundTxSignature(
+  request: VerifyRefundTxSignatureRequest
+): Promise<VerifyRefundTxSignatureResponse> {
+  return handleCall<
+    VerifyRefundTxSignatureRequest,
+    VerifyRefundTxSignatureResponse
+  >(Cfddlc.VerifyRefundTxSignature, request);
 }
 
 export default {
