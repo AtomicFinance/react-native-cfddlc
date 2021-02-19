@@ -1,0 +1,48 @@
+{
+  "name": "react-native-cfddlc",
+  "title": "react-native-cfddlc",
+  "version": "0.0.1",
+  "description": "React Native module for cfd-dlc",
+  "main": "src/index.js",
+  "source": "src/index",
+  "files": [
+    "README.md",
+    "android",
+    "ios",
+    "resources",
+    "src",
+    "react-native-cfddlc.podspec"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "git clean -d -x -f ./android && git clean -d -x -f ./ios"
+  },
+  "devDependencies": {
+    "@types/react-native": "^0.63.50",
+    "react": "^17.0.1",
+    "react-native": "0.63.4"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomicfinance/react-native-cfddlc.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "webassembly",
+    "wasm",
+    "polyfill",
+    "ios",
+    "android"
+  ],
+  "author": "Steven Zhao <steven@atomic.finance> (https://github.com/zpv/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atomicfinance/react-native-cfddlc/issues"
+  },
+  "homepage": "https://github.com/atomicfinance/react-native-cfddlc#readme"
+}
