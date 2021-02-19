@@ -1,27 +1,13 @@
 import Foundation
 import WebKit
 
+let queue = DispatchQueue(label: "cfddlc-queue", qos: .userInitiated, attributes: .concurrent)
+
 func handleCfddlcCall(resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock,  operation: @escaping () -> String) {
     queue.async {
         let response = operation()
         resolve(response)
     }
-}
-
-let queue = DispatchQueue(label: "cfddlc-queue", qos: .userInitiated, attributes: .concurrent)
-
-extension DispatchQueue {
-    static func background(delay: Double = 0.0, background: (()->Void)? = nil, completion: (() -> Void)? = nil) {
-        queue.async {
-            background?()
-            if let completion = completion {
-                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
-                    completion()
-                })
-            }
-        }
-    }
-
 }
 
 @objc(Cfddlc)
@@ -33,6 +19,9 @@ class Cfddlc: NSObject {
     override init() {
         super.init()
         CfddlcBridge().initialize()
+        
+        // ??: prevents some crashes from occurring
+        CfddlcBridge().createCetAdaptorSignatures("{}")
     }
     
     @objc
