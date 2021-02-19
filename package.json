@@ -1,26 +1,34 @@
 {
   "name": "react-native-cfddlc",
   "title": "react-native-cfddlc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React Native module for cfd-dlc",
-  "main": "src/index.js",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "react-native": "src/index.ts",
   "source": "src/index",
   "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
     "README.md",
     "android",
     "ios",
     "resources",
-    "src",
     "react-native-cfddlc.podspec"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "git clean -d -x -f ./android && git clean -d -x -f ./ios"
+    "prepublishOnly": "git clean -d -x -f ./android && git clean -d -x -f ./ios",
+    "prepare": "bob build"
   },
   "devDependencies": {
     "@types/react-native": "^0.63.50",
     "react": "^17.0.1",
-    "react-native": "0.63.4"
+    "react-native": "0.63.4",
+    "react-native-builder-bob": "^0.17.1"
   },
   "peerDependencies": {
     "react": "*",
@@ -44,5 +52,19 @@
   "bugs": {
     "url": "https://github.com/atomicfinance/react-native-cfddlc/issues"
   },
-  "homepage": "https://github.com/atomicfinance/react-native-cfddlc#readme"
+  "homepage": "https://github.com/atomicfinance/react-native-cfddlc#readme",
+  "types": "lib/typescript/src/index.d.ts",
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }
