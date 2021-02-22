@@ -319,7 +319,7 @@ async function handleCall<T1, T2>(
   return JSON.parse(await func(JSON.stringify(request)));
 }
 
-function CreateFundTransaction(
+export function CreateFundTransaction(
   request: CreateFundTransactionRequest
 ): Promise<CreateFundTransactionResponse> {
   return handleCall<
@@ -328,7 +328,7 @@ function CreateFundTransaction(
   >(Cfddlc.CreateFundTransaction, request);
 }
 
-function SignFundTransaction(
+export function SignFundTransaction(
   request: SignFundTransactionRequest
 ): Promise<SignFundTransactionResponse> {
   return handleCall<SignFundTransactionRequest, SignFundTransactionResponse>(
@@ -337,7 +337,7 @@ function SignFundTransaction(
   );
 }
 
-function GetRawFundTxSignature(
+export function GetRawFundTxSignature(
   request: GetRawFundTxSignatureRequest
 ): Promise<GetRawFundTxSignatureResponse> {
   return handleCall<
@@ -346,7 +346,7 @@ function GetRawFundTxSignature(
   >(Cfddlc.GetRawFundTxSignature, request);
 }
 
-function AddSignatureToFundTransaction(
+export function AddSignatureToFundTransaction(
   request: AddSignatureToFundTransactionRequest
 ): Promise<AddSignatureToFundTransactionResponse> {
   return handleCall<
@@ -355,7 +355,7 @@ function AddSignatureToFundTransaction(
   >(Cfddlc.AddSignatureToFundTransaction, request);
 }
 
-function VerifyFundTxSignature(
+export function VerifyFundTxSignature(
   request: VerifyFundTxSignatureRequest
 ): Promise<VerifyFundTxSignatureResponse> {
   return handleCall<
@@ -364,14 +364,16 @@ function VerifyFundTxSignature(
   >(Cfddlc.VerifyFundTxSignature, request);
 }
 
-function CreateCet(request: CreateCetRequest): Promise<CreateCetResponse> {
+export function CreateCet(
+  request: CreateCetRequest
+): Promise<CreateCetResponse> {
   return handleCall<CreateCetRequest, CreateCetResponse>(
     Cfddlc.CreateCet,
     request
   );
 }
 
-function CreateRefundTransaction(
+export function CreateRefundTransaction(
   request: CreateRefundTransactionRequest
 ): Promise<CreateRefundTransactionResponse> {
   return handleCall<
@@ -380,7 +382,7 @@ function CreateRefundTransaction(
   >(Cfddlc.CreateRefundTransaction, request);
 }
 
-function CreateDlcTransactions(
+export function CreateDlcTransactions(
   request: CreateDlcTransactionsRequest
 ): Promise<CreateDlcTransactionsResponse> {
   return handleCall<
@@ -389,7 +391,7 @@ function CreateDlcTransactions(
   >(Cfddlc.CreateDlcTransactions, request);
 }
 
-function CreateCetAdaptorSignature(
+export function CreateCetAdaptorSignature(
   request: CreateCetAdaptorSignatureRequest
 ): Promise<CreateCetAdaptorSignatureResponse> {
   return handleCall<
@@ -398,7 +400,7 @@ function CreateCetAdaptorSignature(
   >(Cfddlc.CreateCetAdaptorSignature, request);
 }
 
-function CreateCetAdaptorSignatures(
+export function CreateCetAdaptorSignatures(
   request: CreateCetAdaptorSignaturesRequest
 ): Promise<CreateCetAdaptorSignaturesResponse> {
   return handleCall<
@@ -407,11 +409,11 @@ function CreateCetAdaptorSignatures(
   >(Cfddlc.CreateCetAdaptorSignatures, request);
 }
 
-function SignCet(request: SignCetRequest): Promise<SignCetResponse> {
+export function SignCet(request: SignCetRequest): Promise<SignCetResponse> {
   return handleCall<SignCetRequest, SignCetResponse>(Cfddlc.SignCet, request);
 }
 
-function VerifyCetAdaptorSignature(
+export function VerifyCetAdaptorSignature(
   request: VerifyCetAdaptorSignatureRequest
 ): Promise<VerifyCetAdaptorSignatureResponse> {
   return handleCall<
@@ -420,7 +422,7 @@ function VerifyCetAdaptorSignature(
   >(Cfddlc.VerifyCetAdaptorSignature, request);
 }
 
-function VerifyCetAdaptorSignatures(
+export function VerifyCetAdaptorSignatures(
   request: VerifyCetAdaptorSignaturesRequest
 ): Promise<VerifyCetAdaptorSignaturesResponse> {
   return handleCall<
@@ -428,7 +430,7 @@ function VerifyCetAdaptorSignatures(
     VerifyCetAdaptorSignaturesResponse
   >(Cfddlc.VerifyCetAdaptorSignatures, request);
 }
-async function GetRawRefundTxSignature(
+export function GetRawRefundTxSignature(
   request: GetRawRefundTxSignatureRequest
 ): Promise<GetRawRefundTxSignatureResponse> {
   return handleCall<
@@ -436,7 +438,7 @@ async function GetRawRefundTxSignature(
     GetRawRefundTxSignatureResponse
   >(Cfddlc.GetRawRefundTxSignature, request);
 }
-async function AddSignaturesToRefundTx(
+export function AddSignaturesToRefundTx(
   request: AddSignaturesToRefundTxRequest
 ): Promise<AddSignaturesToRefundTxResponse> {
   return handleCall<
@@ -444,7 +446,7 @@ async function AddSignaturesToRefundTx(
     AddSignaturesToRefundTxResponse
   >(Cfddlc.AddSignaturesToRefundTx, request);
 }
-async function VerifyRefundTxSignature(
+export function VerifyRefundTxSignature(
   request: VerifyRefundTxSignatureRequest
 ): Promise<VerifyRefundTxSignatureResponse> {
   return handleCall<
@@ -452,22 +454,3 @@ async function VerifyRefundTxSignature(
     VerifyRefundTxSignatureResponse
   >(Cfddlc.VerifyRefundTxSignature, request);
 }
-
-export default {
-  CreateFundTransaction,
-  SignFundTransaction,
-  CreateCetAdaptorSignatures,
-  GetRawFundTxSignature,
-  AddSignatureToFundTransaction,
-  VerifyFundTxSignature,
-  CreateCet,
-  CreateRefundTransaction,
-  CreateDlcTransactions,
-  CreateCetAdaptorSignature,
-  SignCet,
-  VerifyCetAdaptorSignature,
-  VerifyCetAdaptorSignatures,
-  GetRawRefundTxSignature,
-  AddSignaturesToRefundTx,
-  VerifyRefundTxSignature,
-};
