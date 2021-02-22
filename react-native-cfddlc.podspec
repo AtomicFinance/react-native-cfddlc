@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/atomicfinance/react-native-cfddlc.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,hpp,cpp,m,mm,swift}"
-  s.vendored_libraries = "ios/lib/libcfd.a", "ios/lib/libcfdcore.a", "ios/lib/libcfddlc.a", "ios/lib/libunivalue.a", "ios/lib/libwally.a"
+  s.vendored_libraries = "ios/lib/libcfddlc.a"
   s.private_header_files = ["ios/lib/**/*.{h}", "ios/autogen/*.h", "ios/**/*.hpp"]
   
   s.dependency "React-Core"
