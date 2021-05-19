@@ -1,4 +1,4 @@
-import { NativeModules } from 'react-native';
+import { NativeModules } from "react-native";
 const { Cfddlc } = NativeModules;
 
 export interface AdaptorPair {
@@ -312,11 +312,15 @@ export interface VerifyRefundTxSignatureResponse {
   valid: boolean;
 }
 
+const parseBigInt = function (_: any, value: any) {
+  return typeof value == "bigint" ? value.toString() : value;
+};
+
 async function handleCall<T1, T2>(
   func: (arg: string) => Promise<string>,
   request: T1
 ): Promise<T2> {
-  return JSON.parse(await func(JSON.stringify(request)));
+  return JSON.parse(await func(JSON.stringify(request, parseBigInt)));
 }
 
 export function CreateFundTransaction(
