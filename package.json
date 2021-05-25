@@ -1,12 +1,12 @@
 {
   "name": "react-native-cfddlc",
   "title": "react-native-cfddlc",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "React Native module for cfd-dlc",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
   "react-native": "src/index.ts",
-  "source": "src/index",
+  "source": "src/index.ts",
   "files": [
     "src",
     "lib",

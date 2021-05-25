@@ -13,10 +13,7 @@
 		B00BB8CF25DF214600445ADA /* libunivalue.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B00BB8CA25DF214600445ADA /* libunivalue.dylib */; };
 		B00BB8D025DF214600445ADA /* libcfdcore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B00BB8CB25DF214600445ADA /* libcfdcore.dylib */; };
 		B00BB8D125DF214600445ADA /* libcfd.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B00BB8CC25DF214600445ADA /* libcfd.dylib */; };
-		B00BB8DC25DF217000445ADA /* cfddlc_transactions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00BB8D725DF216F00445ADA /* cfddlc_transactions.cpp */; };
-		B00BB8DD25DF217000445ADA /* cfddlc_api_json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00BB8D825DF216F00445ADA /* cfddlc_api_json.cpp */; };
 		B00BB8DE25DF217000445ADA /* cfddlc_bridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = B00BB8D925DF217000445ADA /* cfddlc_bridge.mm */; };
-		B00BB8DF25DF217000445ADA /* cfddlc_api_jsonerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00BB8DA25DF217000445ADA /* cfddlc_api_jsonerror.cpp */; };
 		B00BBB9C25DF36AB00445ADA /* Cfddlc.mm in Sources */ = {isa = PBXBuildFile; fileRef = B00BBB9B25DF36AB00445ADA /* Cfddlc.mm */; };
 /* End PBXBuildFile section */
 
@@ -37,22 +34,15 @@
 		B00BB8BE25DF1EDD00445ADA /* Cfddlc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cfddlc.swift; sourceTree = "<group>"; };
 		B00BB8BF25DF1EDD00445ADA /* Cfddlc-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cfddlc-Bridging-Header.h"; sourceTree = "<group>"; };
 		B00BB8C525DF212700445ADA /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
-		B00BB8C625DF212700445ADA /* autogen */ = {isa = PBXFileReference; lastKnownFileType = folder; path = autogen; sourceTree = "<group>"; };
 		B00BB8C825DF214600445ADA /* libcfddlc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcfddlc.dylib; path = lib/libcfddlc.dylib; sourceTree = "<group>"; };
 		B00BB8C925DF214600445ADA /* libwally.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libwally.dylib; path = lib/libwally.dylib; sourceTree = "<group>"; };
 		B00BB8CA25DF214600445ADA /* libunivalue.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libunivalue.dylib; path = lib/libunivalue.dylib; sourceTree = "<group>"; };
 		B00BB8CB25DF214600445ADA /* libcfdcore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcfdcore.dylib; path = lib/libcfdcore.dylib; sourceTree = "<group>"; };
 		B00BB8CC25DF214600445ADA /* libcfd.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcfd.dylib; path = lib/libcfd.dylib; sourceTree = "<group>"; };
-		B00BB8D325DF216F00445ADA /* cfddlc_api_jsonerror.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cfddlc_api_jsonerror.hpp; sourceTree = "<group>"; };
 		B00BB8D425DF216F00445ADA /* cfddlc_bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cfddlc_bridge.h; sourceTree = "<group>"; };
-		B00BB8D525DF216F00445ADA /* cfddlc_api_json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cfddlc_api_json.hpp; sourceTree = "<group>"; };
-		B00BB8D625DF216F00445ADA /* cfddlc_transactions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cfddlc_transactions.hpp; sourceTree = "<group>"; };
-		B00BB8D725DF216F00445ADA /* cfddlc_transactions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cfddlc_transactions.cpp; sourceTree = "<group>"; };
-		B00BB8D825DF216F00445ADA /* cfddlc_api_json.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cfddlc_api_json.cpp; sourceTree = "<group>"; };
 		B00BB8D925DF217000445ADA /* cfddlc_bridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = cfddlc_bridge.mm; sourceTree = "<group>"; };
-		B00BB8DA25DF217000445ADA /* cfddlc_api_jsonerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cfddlc_api_jsonerror.cpp; sourceTree = "<group>"; };
-		B00BB8DB25DF217000445ADA /* cfddlc_struct.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cfddlc_struct.hpp; sourceTree = "<group>"; };
 		B00BBB9B25DF36AB00445ADA /* Cfddlc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Cfddlc.mm; sourceTree = "<group>"; };
+		B0969228265CEE9600864F89 /* cfd-dlc-js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cfd-dlc-js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,19 +72,12 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				B0969228265CEE9600864F89 /* cfd-dlc-js */,
 				B00BBB9B25DF36AB00445ADA /* Cfddlc.mm */,
-				B00BB8C625DF212700445ADA /* autogen */,
 				B00BB8C525DF212700445ADA /* lib */,
 				B00BB8BF25DF1EDD00445ADA /* Cfddlc-Bridging-Header.h */,
-				B00BB8D825DF216F00445ADA /* cfddlc_api_json.cpp */,
-				B00BB8D525DF216F00445ADA /* cfddlc_api_json.hpp */,
-				B00BB8DA25DF217000445ADA /* cfddlc_api_jsonerror.cpp */,
-				B00BB8D325DF216F00445ADA /* cfddlc_api_jsonerror.hpp */,
 				B00BB8D425DF216F00445ADA /* cfddlc_bridge.h */,
 				B00BB8D925DF217000445ADA /* cfddlc_bridge.mm */,
-				B00BB8DB25DF217000445ADA /* cfddlc_struct.hpp */,
-				B00BB8D725DF216F00445ADA /* cfddlc_transactions.cpp */,
-				B00BB8D625DF216F00445ADA /* cfddlc_transactions.hpp */,
 				B00BB8BE25DF1EDD00445ADA /* Cfddlc.swift */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				B00BB8C725DF214600445ADA /* Frameworks */,
@@ -172,10 +155,7 @@
 			files = (
 				B00BB8DE25DF217000445ADA /* cfddlc_bridge.mm in Sources */,
 				B00BBB9C25DF36AB00445ADA /* Cfddlc.mm in Sources */,
-				B00BB8DF25DF217000445ADA /* cfddlc_api_jsonerror.cpp in Sources */,
 				B00BB8C125DF1EDD00445ADA /* Cfddlc.swift in Sources */,
-				B00BB8DD25DF217000445ADA /* cfddlc_api_json.cpp in Sources */,
-				B00BB8DC25DF217000445ADA /* cfddlc_transactions.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +263,8 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"$(PROJECT_DIR)/cfd-dlc-js/include",
+					"$(PROJECT_DIR)/cfd-dlc-js/src",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,6 +287,8 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"$(PROJECT_DIR)/cfd-dlc-js/include",
+					"$(PROJECT_DIR)/cfd-dlc-js/src",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
