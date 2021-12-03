@@ -1,7 +1,7 @@
 import Foundation
 import WebKit
 
-let queue = DispatchQueue(label: "cfddlc-queue", qos: .userInitiated, attributes: .concurrent)
+let queue = DispatchQueue(label: "cfddlc-queue", qos: .userInitiated)
 
 func handleCfddlcCall(resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock,  operation: @escaping () -> String) {
     queue.async {
