@@ -1,0 +1,3 @@
+[submodule "ios/cfd-dlc-js"]
+	path = ios/cfd-dlc-js
+	url = https://github.com/atomicfinance/cfd-dlc-js
