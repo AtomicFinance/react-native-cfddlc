@@ -94,20 +94,25 @@ export interface CreateDlcTransactionsRequest {
   localFinalScriptPubkey: string;
   remoteFundPubkey: string;
   remoteFinalScriptPubkey: string;
-  localInputAmount: bigint | number;
-  localCollateralAmount: bigint | number;
-  remoteInputAmount: bigint | number;
-  remoteCollateralAmount: bigint | number;
-  refundLocktime: bigint | number;
+  localInputAmount: (bigint | number);
+  localCollateralAmount: (bigint | number);
+  localPayoutSerialId: (bigint | number);
+  localChangeSerialId: (bigint | number);
+  remoteInputAmount: (bigint | number);
+  remoteCollateralAmount: (bigint | number);
+  remotePayoutSerialId: (bigint | number);
+  remoteChangeSerialId: (bigint | number);
+  refundLocktime: (bigint | number);
   localInputs: TxInInfoRequest[];
   localChangeScriptPubkey: string;
   remoteInputs: TxInInfoRequest[];
   remoteChangeScriptPubkey: string;
   feeRate: number;
-  cetLockTime?: bigint | number;
-  fundLockTime?: bigint | number;
+  cetLockTime?: (bigint | number);
+  fundLockTime?: (bigint | number);
+  fundOutputSerialId?: (bigint | number);
   optionDest?: string;
-  optionPremium?: bigint | number;
+  optionPremium?: (bigint | number);
 }
 
 export interface CreateDlcTransactionsResponse {
@@ -116,21 +121,79 @@ export interface CreateDlcTransactionsResponse {
   refundTxHex: string;
 }
 
+/** Create Batch Dlc transactions */
+export interface CreateBatchDlcTransactionsRequest {
+  localPayouts: (bigint | number)[];
+  remotePayouts: (bigint | number)[];
+  numPayouts: (bigint | number)[];
+  localFundPubkeys: string[];
+  localFinalScriptPubkeys: string[];
+  remoteFundPubkeys: string[];
+  remoteFinalScriptPubkeys: string[];
+  localInputAmount: (bigint | number);
+  localCollateralAmounts: (bigint | number)[];
+  localPayoutSerialIds: (bigint | number)[];
+  localChangeSerialId: (bigint | number);
+  remoteInputAmount: (bigint | number);
+  remoteCollateralAmounts: (bigint | number)[];
+  remotePayoutSerialIds: (bigint | number)[];
+  remoteChangeSerialId: (bigint | number);
+  refundLocktimes: (bigint | number)[];
+  localInputs: TxInInfoRequest[];
+  localChangeScriptPubkey: string;
+  remoteInputs: TxInInfoRequest[];
+  remoteChangeScriptPubkey: string;
+  feeRate: number;
+  cetLockTime?: (bigint | number);
+  fundLockTime?: (bigint | number);
+  fundOutputSerialIds?: (bigint | number)[];
+}
+
+export interface CreateBatchDlcTransactionsResponse {
+  fundTxHex: string;
+  cetsHexList: string[];
+  refundTxHexList: string[];
+}
+
 /** Create a fund transaction */
 export interface CreateFundTransactionRequest {
   localPubkey: string;
   remotePubkey: string;
-  outputAmount: bigint | number;
-  localInputs: TxInRequest[];
+  outputAmount: (bigint | number);
+  localInputs: TxInInfoRequest[];
   localChange: TxOutRequest;
-  remoteInputs: TxInRequest[];
+  remoteInputs: TxInInfoRequest[];
   remoteChange: TxOutRequest;
-  feeRate: bigint | number;
+  feeRate: (bigint | number);
   optionDest?: string;
-  optionPremium?: bigint | number;
+  optionPremium?: (bigint | number);
+  lockTime?: (bigint | number);
+  localSerialId?: (bigint | number);
+  remoteSerialId?: (bigint | number);
+  outputSerialId?: (bigint | number);
 }
 
 export interface CreateFundTransactionResponse {
+  hex: string;
+}
+
+/** Create a batch fund transaction */
+export interface CreateBatchFundTransactionRequest {
+  localPubkeys: string[];
+  remotePubkeys: string[];
+  outputAmounts: (bigint | number)[];
+  localInputs: TxInInfoRequest[];
+  localChange: TxOutRequest;
+  remoteInputs: TxInInfoRequest[];
+  remoteChange: TxOutRequest;
+  feeRate: (bigint | number);
+  lockTime?: (bigint | number);
+  localSerialId?: (bigint | number);
+  remoteSerialId?: (bigint | number);
+  outputSerialIds: (bigint | number)[];
+}
+
+export interface CreateBatchFundTransactionResponse {
   hex: string;
 }
 
@@ -332,6 +395,15 @@ export function CreateFundTransaction(
   >(Cfddlc.CreateFundTransaction, request);
 }
 
+export function CreateBatchFundTransaction(
+  request: CreateBatchFundTransactionRequest
+): Promise<CreateBatchFundTransactionResponse> {
+  return handleCall<
+    CreateBatchFundTransactionRequest,
+    CreateBatchFundTransactionResponse
+  >(Cfddlc.CreateBatchFundTransaction, request);
+}
+
 export function SignFundTransaction(
   request: SignFundTransactionRequest
 ): Promise<SignFundTransactionResponse> {
@@ -393,6 +465,15 @@ export function CreateDlcTransactions(
     CreateDlcTransactionsRequest,
     CreateDlcTransactionsResponse
   >(Cfddlc.CreateDlcTransactions, request);
+}
+
+export function CreateBatchDlcTransactions(
+  request: CreateBatchDlcTransactionsRequest
+): Promise<CreateBatchDlcTransactionsResponse> {
+  return handleCall<
+    CreateBatchDlcTransactionsRequest,
+    CreateBatchDlcTransactionsResponse
+  >(Cfddlc.CreateBatchDlcTransactions, request);
 }
 
 export function CreateCetAdaptorSignature(
