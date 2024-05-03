@@ -32,6 +32,13 @@ class Cfddlc: NSObject {
     }
     
     @objc
+    func CreateBatchFundTransaction(_ args: NSString, resolver resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+        handleCfddlcCall(resolve: resolve, reject: reject) {
+            CfddlcBridge().createBatchFundTransaction(args as String)
+        }
+    }
+
+    @objc
     func SignFundTransaction(_ args: NSString, resolver resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
         handleCfddlcCall(resolve: resolve, reject: reject) {
             CfddlcBridge().signFundTransaction(args as String)
@@ -80,6 +87,13 @@ class Cfddlc: NSObject {
         }
     }
     
+    @objc
+    func CreateBatchDlcTransactions(_ args: NSString, resolver resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+        handleCfddlcCall(resolve: resolve, reject: reject) {
+            CfddlcBridge().createBatchDlcTransactions(args as String)
+        }
+    }
+
     @objc
     func CreateCetAdaptorSignature(_ args: NSString, resolver resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
         handleCfddlcCall(resolve: resolve, reject: reject) {
