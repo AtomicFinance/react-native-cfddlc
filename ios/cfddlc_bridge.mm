@@ -16,6 +16,13 @@
             stringWithCString:response.c_str()
             encoding:NSUTF8StringEncoding];
 }
+- (NSString *) CreateBatchFundTransaction:(NSString *)request {
+    std::string request_string = std::string([request UTF8String]);
+    std::string response = cfd::dlc::js::api::json::JsonMappingApi::CreateBatchFundTransaction(request_string);
+    return [NSString
+            stringWithCString:response.c_str()
+            encoding:NSUTF8StringEncoding];
+}
 - (NSString *) SignFundTransaction:(NSString *)request {
     std::string request_string = std::string([request UTF8String]);
     std::string response = cfd::dlc::js::api::json::JsonMappingApi::SignFundTransaction(request_string);
@@ -61,6 +68,13 @@
 - (NSString *) CreateDlcTransactions:(NSString *)request {
     std::string request_string = std::string([request UTF8String]);
     std::string response = cfd::dlc::js::api::json::JsonMappingApi::CreateDlcTransactions(request_string);
+    return [NSString
+            stringWithCString:response.c_str()
+            encoding:NSUTF8StringEncoding];
+}
+- (NSString *) CreateBatchDlcTransactions:(NSString *)request {
+    std::string request_string = std::string([request UTF8String]);
+    std::string response = cfd::dlc::js::api::json::JsonMappingApi::CreateBatchDlcTransactions(request_string);
     return [NSString
             stringWithCString:response.c_str()
             encoding:NSUTF8StringEncoding];
