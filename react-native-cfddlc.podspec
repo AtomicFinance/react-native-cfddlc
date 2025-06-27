@@ -20,7 +20,8 @@ Pod::Spec.new do |s|
   s.dependency "React-Core"
   s.preserve_paths = ['lib/**', 'include/**']
   s.pod_target_xcconfig = {
-    'HEADER_SEARCH_PATHS' => ["\"" + __dir__ + "/ios/lib\"", "\"" + __dir__ + "/ios/cfd-dlc-js/include\""]
+    'HEADER_SEARCH_PATHS' => ["\"" + __dir__ + "/ios/lib\"", "\"" + __dir__ + "/ios/cfd-dlc-js/include\""],
+    'WARNING_CFLAGS' => '-Wno-documentation-deprecated-sync'
   }
   s.xcconfig = {
     'HEADER_SEARCH_PATHS' =>  ["\"${PODS_ROOT}/react-native-cfd/ios/lib\"", "\"${PODS_ROOT}/react-native-cfd/ios/cfd-dlc-js/include\""]
